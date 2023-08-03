@@ -1,0 +1,204 @@
+/* place the chatbot element down in the bottom with fixed position*/
+.chat-bar-collapsible {
+    font-family: sans-serif;
+    position: fixed;
+    bottom: 0;
+    right: 30px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+}
+
+
+
+/* cursor into pointer button or clickable element for user understing*/
+.collapsible {
+    font-family: sans-serif;
+    background-color: rgb(2, 66, 61);
+    color: white;
+    cursor: pointer;
+    padding: 20px;
+    width: 350px;
+    text-align: left;
+    outline: none;
+    font-size: 18px;
+    border-radius: 10px 10px 0px 0px;
+    border: 0px solid white;
+    border-bottom: none;
+}
+
+#chat-timestamp {
+    font-size: 12px;
+    font-family: sans-serif;
+}
+/* by clicking it grow up and become smaller again*/
+.content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    background-color: #f1f1f1;
+    font-family: sans-serif;
+}
+
+/* for full chat block display*/
+.full-chat-block {
+    font-family: sans-serif;
+    width: 350px;
+    background: rgba(2, 66, 61, 0.1);;
+    text-align: center;
+    overflow: auto;
+    scrollbar-width: none;
+    height: max-content;
+    transition: max-height 0.2s ease-out;
+}
+
+/* min height should be */
+.outer-container {
+    font-family: sans-serif;
+    min-height: 500px;
+    bottom: 0%;
+    position: relative;
+}
+
+/* scrolling behaivour with max height*/
+.chat-container {
+    font-family: sans-serif;
+    max-height: 500px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    scroll-behavior: smooth;
+    hyphens: auto;
+}
+
+/* sudo element for scrollbar to make sure it remain hidden inside the chatbox*/
+.chat-container::-webkit-scrollbar {
+    font-family: sans-serif;
+    display: none;
+}
+
+/* it is for input section */
+.chat-bar-input-block {
+    font-family: sans-serif;
+    display: flex;
+    float: left;
+    box-sizing: border-box;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    background-color: rgb(235, 235, 235);
+    border-radius: 10px 10px 0px 0px;
+    padding: 10px 0px 10px 10px;
+}
+
+.chat-bar-icons {
+    font-family: sans-serif;
+    display: flex;
+    justify-content: space-evenly;
+    box-sizing: border-box;
+    width: 25%;
+    float: right;
+    font-size: 20px;
+}
+/* sudo element faidout 0.7*/
+#chat-icon:hover {
+    opacity: .7;
+}
+
+/* Chat bubbles  input section 75% other 25% is icon*/
+
+#userInput {
+    width: 75%;
+}
+
+.input-box {
+    font-family: sans-serif;
+    float: left;
+    border: none;
+    box-sizing: border-box;
+    width: 100%;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 15px;
+    color: #000;
+    background-color: white;
+    outline: none
+}
+
+/* Define text inside texbox when it send*/
+.userText {
+    font-family: sans-serif;
+    color: white;
+    font-family: Helvetica;
+    font-size: 15px;
+    font-weight: normal;
+    text-align: right;
+    clear: both;
+}
+
+/* Define text outside*/
+.userText span {
+    font-family: sans-serif;
+    line-height: 1.5em;
+    display: inline-block;
+    background: #5ca6fa;
+    padding: 10px;
+    border-radius: 8px;
+    border-bottom-right-radius: 2px;
+    max-width: 80%;
+    margin-right: 10px;
+    animation: floatup .5s forwards
+}
+/* define box of text in left side*/
+.botText {
+    font-family: sans-serif;
+    color: #000;
+    font-family: Helvetica;
+    font-weight: normal;
+    font-size: 15px;
+    text-align: left;
+}
+
+.botText span {
+    font-family: sans-serif;
+    line-height: 1.5em;
+    display: inline-block;
+    background: #FFFFFF;
+    padding: 10px;
+    border-radius: 8px;
+    border-bottom-left-radius: 2px;
+    max-width: 80%;
+    margin-left: 10px;
+    animation: floatup .5s forwards
+}
+
+/* custmize animated using keyframes keyword*/
+@keyframes floatup {
+    from {
+        transform: translateY(14px);
+        opacity: .0;
+    }
+    to {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .full-chat-block {
+        width: 100%;
+        border-radius: 0px;
+    }
+    .chat-bar-collapsible {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+    }
+    .collapsible {
+        width: 100%;
+        border: 0px;
+        border-top: 3px solid white;
+        border-radius: 0px;
+    }
+}
